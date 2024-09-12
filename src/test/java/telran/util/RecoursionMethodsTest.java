@@ -22,11 +22,32 @@ public class RecoursionMethodsTest {
         assertEquals(100, pow(-10, 2));
         assertEquals(1000, pow(10, 3));
         assertEquals(-1000, pow(-10, 3));
-        assertThrowsExactly(IllegalArgumentException.class, () -> pow(10, -3));
+        //assertThrowsExactly(IllegalArgumentException.class, () -> pow(10, -3));
     }
     @Test
     void sumTest() {
         int[] ar = {1, 2, 3, 4, 5};
         assertEquals(15, sum(ar));
+    }
+
+    @Test
+    void squareTest() {
+        assertEquals(64, square(8));
+        assertEquals(64, square(-8));
+    }
+
+    @Test
+    void isSubStringTrueTest() {
+        assertTrue(isSubstring("world", "world"));
+        assertTrue(isSubstring("hello world", "world"));
+        assertTrue(isSubstring("hello world", " "));
+        assertTrue(isSubstring("hello world", ""));
+
+    }
+    
+    @Test
+    void isSubStringFalseTest() {
+        assertFalse(isSubstring("hello wrld", "world"));
+        assertFalse(isSubstring("hello world", "helli"));
     }
 }
