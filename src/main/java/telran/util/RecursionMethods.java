@@ -25,8 +25,9 @@ public class RecursionMethods {
      *         2. arithmetic operators + ; - are allowed only
      *         3. bitwise operators like >>, <<, &&, etc disallowe
      */
+    
     public static long pow(int num, int degree) {
-        return degree == 0 ? 1 : degree == 1 ? num : multiply(num, (int) pow(num, degree - 1));
+        return degree == 0 ? 1 : multiply(num, (int) pow(num, degree - 1));
     }
 
     private static long multiply(int num, int degree) {
@@ -52,6 +53,7 @@ public class RecursionMethods {
      *         4. no standard and additional methods are allowed
      *         5. no additional fields of the class RecursionMethods are allowed
      */
+
     public static int square(int x) {
         return x < 0 ? square(x + 1) - x - x - 1 : x == 0 ? 0 : square(x - 1) + x + x - 1;
     }
@@ -88,10 +90,11 @@ public class RecursionMethods {
     }
 
     public static boolean startsWith(String string, String subString) {
-        boolean res = false;     
+        boolean res = false;
         if (subString.length() == 0) {
             res = true;
-        } else if (string.length() > 0 && string.charAt(0) == subString.charAt(0)){ //no limitation using bitwise operators?
+        } else if (string.length() > 0 && string.charAt(0) == subString.charAt(0)) { // no limitation using bitwise
+                                                                                     // operators?
             res = startsWith(string.substring(1), subString.substring(1));
         }
         return res;
